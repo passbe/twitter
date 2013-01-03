@@ -11,7 +11,7 @@ A Symphony extension that allows you to retrieve tweets from a twitter account.
 
 ## Installation - git submodules
 
-This extension uses an external library for twitter communication which resides in lib/twitter-async/. If this folder does not exist for you please ensure all git submodules have been updated.
+This extension uses an external library for twitter communication which resides in lib/twitter-async/. If this folder (or its contents) do not exist for you please ensure all git submodules have been updated recursively.
 
 ## Obtaining a Consumer Token and Secret
 
@@ -24,4 +24,4 @@ In order to use this extension you must register an application with twitter to 
 
 ## Future Work
 
-* I have a prototype field that will publish a tweets
+* I have a prototype field that will publish a tweet once the entry has been created. More work is needed before I can release this feature.
