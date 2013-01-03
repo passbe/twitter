@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension id="twitter" xmlns="http://symphony-cms.com/schemas/extension/1.0">
+	<name>Twitter</name>
+	<description>Retrieves a tweets from a twitter account.</description>
+    <repo type="github">http://github.com/passbe/twitter</repo>
+    <types>
+        <type>3rd Party Intergration</type>
+    </types>
+	<authors>
+		<author>
+			<name>Ben Passmore</name>
+            <email>contact@passbe.com</email>
+            <website>http://www.passbe.com</website>
+		</author>
+	</authors>
+	<releases>
+        <release version="0.4" date="2013-01-03" min="2.3"/>
+	</releases>
+</extension>
