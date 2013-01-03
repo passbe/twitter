@@ -177,13 +177,13 @@
                     //Store each tweet attributes
                     foreach ($this->_tweet_attributes as $key) {
                         if (array_key_exists($key, $tweet)) {
-                            $t->setAttribute($key, $tweet[$key]);
+                            $t->setAttribute($key, General::sanitize($tweet[$key]));
                         }
                     }
                     //Store each tweet value
                     foreach ($this->_tweet_values as $key) {
                         if (array_key_exists($key, $tweet)) {
-                            $t->appendChild(new XMLElement($key, __($tweet[$key])));
+                            $t->appendChild(new XMLElement($key, __(General::sanitize($tweet[$key]))));
                         }
                     }
                     //Store user details
@@ -191,7 +191,7 @@
                         $user = new XMLElement('user');
                         foreach ($this->_user_values as $key) {
                             if (array_key_exists($key, $tweet['user'])) {
-                                $user->appendChild(new XMLElement($key, __($tweet['user'][$key])));
+                                $user->appendChild(new XMLElement($key, __(General::sanitize($tweet['user'][$key]))));
                             }
                         }
                         if ($this->single_user) {
