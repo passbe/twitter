@@ -82,9 +82,11 @@
             $oauth_secret = Symphony::Configuration()->get('oauth_secret', $this->__name);
 
             //Generate OAuth URL
-            $twitter = new EpiTwitter($consumer_key, $consumer_secret);
-            $twitter->useApiVersion(1.1);
-            $oauth_link = $twitter->getAuthenticateUrl(null, array('oauth_callback' => SYMPHONY_URL."/extension/$this->__name/oauth"));
+            if (!empty($consumer_key) && !empty($consumer_secret)) {
+                $twitter = new EpiTwitter($consumer_key, $consumer_secret);
+                $twitter->useApiVersion(1.1);
+                $oauth_link = $twitter->getAuthenticateUrl(null, array('oauth_callback' => SYMPHONY_URL."/extension/$this->__name/oauth"));
+            }
 
             //Build HTML preferences
             $fieldset = new XMLElement('fieldset');
@@ -96,7 +98,11 @@
             $div = new XMLElement('div');
             $div->setAttribute('class', 'two columns');
             $div->appendChild($this->input('Screen Name', 'screen_name', $screen_name));
-            $msg = (!empty($oauth_token) && !empty($oauth_secret)) ? "Token found! <a href=\"$oauth_link\">Regenerate OAuth Token</a>." : "Token not found <a href=\"$oauth_link\">Click Here To Generate OAuth Token</a>.";
+            if (!empty($consumer_key) && !empty($consumer_secret)) {
+                $msg = (!empty($oauth_token) && !empty($oauth_secret)) ? "Token found! <a href=\"$oauth_link\">Regenerate OAuth Token</a>." : "Token not found <a href=\"$oauth_link\">Click Here To Generate OAuth Token</a>.";
+            } else {
+                $msg = "You must save a consumer key and secret before you can generate an OAuth token.";
+            }
             $div->appendChild(new XMLElement('p', __("<br /><b>OAuth Status</b>: ".$msg), array('class' => 'column')));
             $fieldset->appendChild($div);
             $fieldset->appendChild(new XMLElement('br'));
@@ -109,7 +115,7 @@
             $fieldset->appendChild($div);
 
             //consumer note
-            $fieldset->appendChild(new XMLElement('p', __('<br />To obtain a Consumer Key and Secret please read the documentation avaliable at http://address.com.'), array('class' => 'help')));
+            $fieldset->appendChild(new XMLElement('p', __('<br />To obtain a Consumer Key and Secret please read the documentation avaliable at http://github.com/passbe/twitter/.'), array('class' => 'help')));
 
             $context['wrapper']->appendChild($fieldset);
         }
