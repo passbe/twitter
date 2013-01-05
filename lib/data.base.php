@@ -47,7 +47,8 @@
 
         //Included json attributes in XML
         protected $_tweet_attributes = array(
-            'id', 
+            'id',
+            'id_str', 
             'created_at'
         );
         
