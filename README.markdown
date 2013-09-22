@@ -19,7 +19,7 @@ In order to use this extension you must register an application with twitter to 
 
 * Visit [https://dev.twitter.com/user/login](https://dev.twitter.com/user/login) and sign in
 * In the drop down under your screen name in the top right select "My applications"
-* Create a new application and fill out the required fields (make sure you leave the "Callback URL" blank)
+* Create a new application and fill out the required fields (Set your Symphony install’s preferences page as the callback URL)
 * Once created, you should be able to see a Consumer Key and Consumer Secret, save these to the twitter preferences on your Symphony website.
 
 ## Future Work
