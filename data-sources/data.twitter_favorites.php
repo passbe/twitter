@@ -3,13 +3,13 @@
     //Require base datasource
     require_once(EXTENSIONS . '/twitter/lib/data.base.php');
 
-    //Retrieves the twitter users timeline
-    Class datasourceTwitter_user extends datasourceTwitter_base{
+    //Retrieves the twitter favorites
+    Class datasourceTwitter_favorites extends datasourceTwitter_base{
 
         //Cosntructor
         public function __construct(&$parent, $env=NULL, $process_params=true){
             //Set twitter mode
-            $this->mode = self::MODE_USER;
+            $this->mode = self::MODE_FAVORITES;
             //Only return one user object
             $this->single_user = true;
             parent::__construct($parent, $env, $process_params);
@@ -18,11 +18,11 @@
         //About
         public function about(){
             return array(
-                'name' => 'Twitter: User Tweets',
+                'name' => 'Twitter: Favorites',
                 'author' => array(
-                    'name' => 'Ben Passmore',
-                    'website' => 'http://passbe.com',
-                    'email' => 'contact@passbe.com'),
+                    'name' => 'Brian Drum',
+                    'website' => 'http://briandrum.net',
+                    'email' => 'brian@briandrum.net'),
                 'version' => '0.5'
             );
         }

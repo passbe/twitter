@@ -1,16 +1,16 @@
 <?php
 
     //Require data-source
-	require_once(TOOLKIT . '/class.datasource.php');
+    require_once(TOOLKIT . '/class.datasource.php');
 
     //Require cachable
     require_once(CORE . '/class.cacheable.php');
 
     //Base datasource class
-	Class datasourceTwitter_base extends Datasource{
+    Class datasourceTwitter_base extends Datasource{
 
         //Root node
-		public $dsParamROOTELEMENT = 'twitter';
+        public $dsParamROOTELEMENT = 'twitter';
 
         //Tweet limit
         public $dsParamLIMIT = 20;
@@ -32,6 +32,7 @@
         const MODE_USER = 'user-timeline';
         const MODE_RETWEETS = 'retweets-of-me';
         const MODE_MENTIONS = 'mentions';
+        const MODE_FAVORITES = 'favorites';
 
         //Single user object
         public $single_user = false;
@@ -48,10 +49,10 @@
         //Included json attributes in XML
         protected $_tweet_attributes = array(
             'id',
-            'id_str', 
+            'id_str',
             'created_at'
         );
-        
+
         //Included json values in XML
         protected $_tweet_values = array(
             'text',
@@ -81,9 +82,9 @@
         );
 
         //Retrieve elements
-		public function grab(&$param_pool=NULL){
+        public function grab(&$param_pool=NULL){
             //Create root XML node
-			$result = new XMLElement($this->dsParamROOTELEMENT);
+            $result = new XMLElement($this->dsParamROOTELEMENT);
 
             //check that mode is set correctly
             if (!$this->checkMode()) {
@@ -205,11 +206,11 @@
                     }
                     //Append tweet
                     $result->appendChild($t);
-                }   
+                }
             }
             //return result
-			return $result;
-		}
+            return $result;
+        }
 
         //Check valid mode
         private function checkMode() {
@@ -218,6 +219,7 @@
                 case self::MODE_USER:
                 case self::MODE_RETWEETS:
                 case self::MODE_MENTIONS:
+                case self::MODE_FAVORITES:
                     return true;
                 break;
             }
@@ -239,6 +241,9 @@
                 case self::MODE_MENTIONS:
                     return '/statuses/mentions_timeline.json';
                 break;
+                case self::MODE_FAVORITES:
+                    return '/favorites/list.json';
+                break;
             }
             return false;
         }
@@ -247,6 +252,7 @@
         private function getModeParams() {
             switch ($this->mode) {
                 case self::MODE_USER:
+                case self::MODE_FAVORITES:
                     return array('screen_name' => $this->__screen_name, 'count' => $this->dsParamLIMIT);
                 break;
                 case self::MODE_HOME:
@@ -258,4 +264,4 @@
             return array();
         }
 
-	}
+    }
