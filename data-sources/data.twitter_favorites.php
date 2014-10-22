@@ -4,7 +4,7 @@
     require_once(EXTENSIONS . '/twitter/lib/data.base.php');
 
     //Retrieves the twitter favorites
-	Class datasourceTwitter_user extends datasourceTwitter_base{
+	Class datasourceTwitter_favorites extends datasourceTwitter_base{
 
         //Cosntructor
 		public function __construct(&$parent, $env=NULL, $process_params=true){
