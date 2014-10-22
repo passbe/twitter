@@ -141,5 +141,5 @@
             $label->appendChild(Widget::Input("settings[$this->__name][$key]", $value));
             return $label;
         }
-		
+
 	}
