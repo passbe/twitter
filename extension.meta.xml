@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <extension id="twitter" xmlns="http://symphony-cms.com/schemas/extension/1.0">
-	<name>Twitter</name>
-	<description>Retrieves a tweets from a twitter account.</description>
+    <name>Twitter</name>
+    <description>Retrieves Home Timeline, Favorites, Mentions, and Retweets from the authenticated Twitter account.</description>
     <repo type="github">http://github.com/passbe/twitter</repo>
+    <url type="discuss">http://getsymphony.com/discuss/thread/32797/</url>
     <types>
-        <type>3rd Party Intergration</type>
+        <type>3rd Party Integration</type>
     </types>
-	<authors>
-		<author>
-			<name>Ben Passmore</name>
+    <authors>
+        <author>
+            <name>Ben Passmore</name>
             <email>contact@passbe.com</email>
             <website>http://www.passbe.com</website>
-		</author>
-	</authors>
-	<releases>
-        <release version="0.4" date="2013-01-03" min="2.3"/>
-	</releases>
+        </author>
+        <author>
+            <name>Brian Drum</name>
+            <email>brian@briandrum.net</email>
+            <website>http://briandrum.net</website>
+        </author>
+    </authors>
+    <releases>
+        <release version="0.5" date="2014-10-22" min="2.3">
+            - Add Favorites datasource
+        </release>
+        <release version="0.4" date="2013-01-03" min="2.3">
+            - First public release of Twitter extension
+        </release>
+    </releases>
 </extension>

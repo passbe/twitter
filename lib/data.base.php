@@ -1,16 +1,16 @@
 <?php
 
     //Require data-source
-	require_once(TOOLKIT . '/class.datasource.php');
+    require_once(TOOLKIT . '/class.datasource.php');
 
     //Require cachable
     require_once(CORE . '/class.cacheable.php');
 
     //Base datasource class
-	Class datasourceTwitter_base extends Datasource{
+    Class datasourceTwitter_base extends Datasource{
 
         //Root node
-		public $dsParamROOTELEMENT = 'twitter';
+        public $dsParamROOTELEMENT = 'twitter';
 
         //Tweet limit
         public $dsParamLIMIT = 20;
@@ -82,9 +82,9 @@
         );
 
         //Retrieve elements
-		public function grab(&$param_pool=NULL){
+        public function grab(&$param_pool=NULL){
             //Create root XML node
-			$result = new XMLElement($this->dsParamROOTELEMENT);
+            $result = new XMLElement($this->dsParamROOTELEMENT);
 
             //check that mode is set correctly
             if (!$this->checkMode()) {
@@ -209,8 +209,8 @@
                 }
             }
             //return result
-			return $result;
-		}
+            return $result;
+        }
 
         //Check valid mode
         private function checkMode() {
@@ -264,4 +264,4 @@
             return array();
         }
 
-	}
+    }
