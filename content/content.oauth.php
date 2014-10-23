@@ -1,7 +1,7 @@
 <?php
 
     //Require admin page
-   	require_once(TOOLKIT . '/class.administrationpage.php');
+    require_once(TOOLKIT . '/class.administrationpage.php');
 
     //Set OAuth settings from Twitter OAuth callback
     class contentExtensionTwitterOauth extends AdministrationPage

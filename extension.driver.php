@@ -1,7 +1,7 @@
 <?php
     //Twitter Symphony CMS Extension class
-	Class extension_Twitter extends Extension
-	{
+    Class extension_Twitter extends Extension
+    {
 
         //Configuration key
         private $__name = 'twitter';
@@ -40,7 +40,7 @@
         }
 
         //Delegate specification
-		public function getSubscribedDelegates() {
+        public function getSubscribedDelegates() {
             return array(
                 array('page'    => '/backend/',
                 'delegate'      => 'AppendPageAlert',
@@ -49,7 +49,7 @@
                 'delegate'      => 'AddCustomPreferenceFieldsets',
                 'callback'      => 'preferences')
             );
-		}
+        }
 
         //Install procedure - inserts configuration items with default values
         public function install() {
@@ -141,5 +141,5 @@
             $label->appendChild(Widget::Input("settings[$this->__name][$key]", $value));
             return $label;
         }
-		
-	}
+
+    }
