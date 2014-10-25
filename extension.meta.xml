@@ -3,7 +3,7 @@
     <name>Twitter</name>
     <description>Retrieves Home Timeline, Favorites, Mentions, and Retweets from the authenticated Twitter account.</description>
     <repo type="github">http://github.com/passbe/twitter</repo>
-    <url type="discuss">http://getsymphony.com/discuss/thread/32797/</url>
+    <url type="discuss">http://www.getsymphony.com/discuss/thread/108634/</url>
     <types>
         <type>3rd Party Integration</type>
     </types>
