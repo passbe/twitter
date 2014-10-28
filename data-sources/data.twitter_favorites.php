@@ -21,7 +21,7 @@
                     'name' => 'Brian Drum',
                     'website' => 'http://briandrum.net',
                     'email' => 'brian@briandrum.net'),
-                'version' => '0.5'
+                'version' => '0.5.1'
             );
         }
 

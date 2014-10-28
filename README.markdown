@@ -1,8 +1,8 @@
 # Twitter
 
-* Version: 0.5
+* Version: 0.5.1
 * Author: [Ben Passmore](http://www.passbe.com)
-* Build Date: 2014-10-22
+* Build Date: 2014-10-28
 * Requirements: Symphony 2.3
 
 ## Description
