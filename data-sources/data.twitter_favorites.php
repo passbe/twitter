@@ -10,8 +10,6 @@
         public function __construct(&$parent, $env=NULL, $process_params=true){
             //Set twitter mode
             $this->mode = self::MODE_FAVORITES;
-            //Only return one user object
-            $this->single_user = true;
             parent::__construct($parent, $env, $process_params);
         }
 
