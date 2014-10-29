@@ -21,7 +21,7 @@
                     'name' => 'Ben Passmore',
                     'website' => 'http://passbe.com',
                     'email' => 'contact@passbe.com'),
-                'version' => '0.5'
+                'version' => '0.5.1'
             );
         }
 

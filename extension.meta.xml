@@ -20,6 +20,9 @@
         </author>
     </authors>
     <releases>
+        <release version="0.5.1" date="2014-10-22" min="2.3">
+            - Fix to include Twitter user info in Favorites datasource
+        </release>
         <release version="0.5" date="2014-10-22" min="2.3">
             - Add Favorites datasource
         </release>
