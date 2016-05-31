@@ -59,7 +59,7 @@
                 Symphony::Configuration()->set('consumer_secret', null, $this->__name);
                 Symphony::Configuration()->set('oauth_token', null, $this->__name);
                 Symphony::Configuration()->set('oauth_secret', null, $this->__name);
-                Administration::instance()->saveConfig();
+                Symphony::Configuration()->write();
                 return true;
             }
             return false;
