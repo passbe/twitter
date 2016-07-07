@@ -20,6 +20,9 @@
         </author>
     </authors>
     <releases>
+        <release version="0.5.2" date="2016-07-07" min="2.3" max="2.6.6">
+            - Fix to include Twitter entities information
+        </release>
         <release version="0.5.1" date="2014-10-22" min="2.3">
             - Fix to include Twitter user info in Favorites datasource
         </release>

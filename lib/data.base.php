@@ -188,6 +188,12 @@
                             $t->appendChild(new XMLElement($key, __(General::sanitize($tweet[$key]))));
                         }
                     }
+                    //Store 'entities' from each tweet
+                    if (array_key_exists('entities', $tweet)) {
+                        $e = new XMLElement('entities');
+                        $this->arrayToXML($tweet['entities'], 'entities', $e);
+                        $t->appendChild($e);
+                    }
                     //Store user details
                     if ((($this->single_user === true && $k == 0) || ($this->single_user === false)) && array_key_exists('user', $tweet)) {
                         $user = new XMLElement('user');
@@ -262,6 +268,33 @@
                 break;
             }
             return array();
+        }
+
+        //Walk array and add each element to XML tree
+        private function arrayToXML($data, $parentKey, &$xml) {
+            foreach($data as $key => $value) {
+                if (is_array($value)) {
+                        $key = $this->numericToKey($key, $parentKey);
+                        $t = new XMLElement($key);
+                        $this->arrayToXML($value, $key, $t);
+                        $xml->appendChild($t);
+                } else {
+                    $key = $this->numericToKey($key, $parentKey);
+                    $xml->appendChild(new XMLElement($key, __(General::sanitize($value))));
+                }
+            }
+        }
+
+        //Attempts to turn a numeric key into XML friendly key
+        private function numericToKey($key, $parentKey) {
+            if (is_numeric($key)) {
+                if (substr($parentKey, -1) == 's') {
+                    $key = rtrim($parentKey, 's');
+                } else {
+                    $key = 'item';
+                }
+            }
+            return $key;
         }
 
     }

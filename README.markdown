@@ -1,9 +1,9 @@
 # Twitter
 
-* Version: 0.5.1
+* Version: 0.5.2
 * Author: [Ben Passmore](http://www.passbe.com)
-* Build Date: 2014-10-28
-* Requirements: Symphony 2.3
+* Build Date: 2016-07-07
+* Requirements: Symphony 2.3 - 2.6.6
 
 ## Description
 
@@ -21,7 +21,3 @@ In order to use this extension you must register an application with twitter to 
 * In the drop down under your screen name in the top right select “My applications”
 * Create a new application and fill out the required fields. Be sure to set a callback URL (your website URL or preferences page are both fine), leaving it blank will result in Symphony errors when visiting your preferences page.
 * Once created, you should be able to see a Consumer Key and Consumer Secret, save these to the twitter preferences on your Symphony website.
-
-## Future Work
-
-* I have a prototype field that will publish a tweet once the entry has been created. More work is needed before I can release this feature.
